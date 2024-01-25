@@ -7,35 +7,31 @@ const MainProvider = ({children}) => {
     const [id, setId] = useState()
     const [data, setData] = useState()
     const [category, setCategory] = useState()
+    const [cocktail, setCocktail] = useState()
+
+    // useEffect(() => {
+    //     const getCocktailId = async  () =>{ 
+    //         const resp = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${category}`)
+    //         const ids = resp.data.drinks.map(drink => drink.idDrink);
+    //         setId(ids)
+    //     }
+    //     { category ? getCocktailId() : null}
+    // }, [category])
+
 
     useEffect(() => {
-        const getCocktailId = async  () =>{ 
-            const resp = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${category}`)
-            console.log(resp.data.drinks);
-            setId(resp.data.drinks)
-        }
-        { category ? getCocktailId() : null}
-    }, [category])
-
-
-    useEffect(() => {
-      {id.map((cocktail) =>{
-        
-      })}
-      const getCocktail = 
-      async  () =>{ 
-          const resp = await axios.get(`www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
+      const getCocktail = async  () =>{ 
+          const resp = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s`)
           setData(resp.data.drinks)
-          console.log(data);
       }
-      { id ? getCocktail() : null}
-  }, [id])
+      { category ? getCocktail() : null}
+  }, [category])
 
 
 
   return (
     <>
-    <mainContext.Provider value={{ data, setCategory, category}}>
+    <mainContext.Provider value={{ data, setCategory, category, setId, id, setCocktail, cocktail}}>
       {children}
     </mainContext.Provider>
     </>

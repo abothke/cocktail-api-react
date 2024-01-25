@@ -1,0 +1,10 @@
+.cocktailInfo{
+    height: 50%;
+    width: 50%;
+    position: fixed;
+    left: 25%;
+    top: 25%;
+    background-color: aliceblue;
+    color: black;
+    border-radius: 10px;
+}

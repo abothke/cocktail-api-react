@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './pages/home/Home'
 import CocktailGallery from './pages/cocktailGallery/CocktailGallery';
+import CocktailCard from './assets/components/cocktailCard/CocktailCard';
 
 function App() {
 

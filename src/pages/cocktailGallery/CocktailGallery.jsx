@@ -1,23 +1,22 @@
 import React, { useContext, useEffect } from 'react'
 import { mainContext } from '../../assets/context/mainProvider'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import CocktailCard from './../../assets/components/cocktailCard/CocktailCard';
 
 
 const CocktailGallery = () => {
-const { data, setCategory, category } = useContext(mainContext)
+const { data, setCategory, category, setId } = useContext(mainContext)
 const { cat } = useParams()
 
 useEffect(()=> {
   setCategory(cat)
-  // let filteredArray = [...data]
-  // const result = filteredArray.filter(element) => element.includes(category))
-  // console.log(result);
 }, [data])
 
 
 
   return (
     <>
+    <CocktailCard/>
     {data ? (
       <>
       <p>{category}</p>
@@ -26,6 +25,7 @@ useEffect(()=> {
           <div key={index}>
           <p>{cocktail.strDrink}</p>
           <img src={cocktail.strDrinkThumb}/>
+          <button onClick={() => setId(cocktail.idDrink)}>set ID</button>
           </div>
         )
       })}
