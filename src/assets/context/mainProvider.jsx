@@ -21,7 +21,7 @@ const MainProvider = ({children}) => {
 
     useEffect(() => {
       const getCocktail = async  () =>{ 
-          const resp = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s`)
+          const resp = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${category}`)
           setData(resp.data.drinks)
       }
       { category ? getCocktail() : null}
