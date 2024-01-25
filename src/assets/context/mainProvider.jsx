@@ -8,16 +8,14 @@ const MainProvider = ({children}) => {
     const [category, setCategory] = useState()
 
     useEffect(() => {
-        const getCocktail = async () =>{
+        const getCocktail = async  () =>{ 
             const resp = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s')
-            setData(resp.data)
+            setData(resp.data.drinks)
             console.log(data);
-            console.log("hallo");
         }
         { category ? getCocktail() : null}
     }, [category])
 
-    console.log(data);
 
   return (
     <>
