@@ -9,14 +9,18 @@ const { cat } = useParams()
 
 useEffect(()=> {
   setCategory(cat)
+  // let filteredArray = [...data]
+  // const result = filteredArray.filter(element) => element.includes(category))
+  // console.log(result);
 }, [data])
 
-console.log(data);
+
 
   return (
     <>
     {data ? (
       <>
+      <p>{category}</p>
       {data.map((cocktail, index) =>{
         return(
           <div key={index}>
