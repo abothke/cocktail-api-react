@@ -42,7 +42,7 @@ const CocktailCard = () => {
     <>
     <div className='overlay'>
       
-      { cocktail ? (
+      { cocktail  ? (
         <div id="cocktailInfo" className='cocktailInfo'>
         <img src={cocktail.strDrinkThumb} width={250}/>
         <h2>{cocktail.strDrink}</h2>

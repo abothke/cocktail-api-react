@@ -44,7 +44,14 @@ useEffect(()=> {
       )
       }
 </div>
-
+{cat === "zufall" ? (
+              <button onClick={() => window.location.reload()}>Einer geht noch!</button>
+            )
+            :
+            (
+              null
+            ) 
+          }
     </>
   )
 }

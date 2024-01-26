@@ -38,7 +38,6 @@ const MainProvider = ({children}) => {
       const getCocktail = async  () =>{ 
           const resp = await axios.get(apiURL)
           setData(resp.data.drinks)
-      { zufall ? setId(resp.data.drinks[0].idDrink) : null }
       }
       { category ? getCocktail() : null}
   }, [category, searchTerm])

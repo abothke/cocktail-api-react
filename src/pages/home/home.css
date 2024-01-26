@@ -1,6 +1,7 @@
 #ctCat{
 display: flex;
 flex-wrap: wrap;
+justify-content: center;
 width: 100%;
     a{
         width: 40%;
