@@ -15,11 +15,13 @@ console.log(darkmode);
 }
   return (
     <>
-    <nav>
+    <nav className='navbar navbar-expand-lg navbar-light'>
       <button id='modeToggle' onClick={() => toggleMode()}>🌔</button>
+      <div className="header-content">
       <Link to="/"><h1>Drinks & Chill</h1></Link>
       <h2>Cocktails & Getränke!</h2>
       <p>Herzlich Willkommen in der Welt der Cocktails und Getränke!</p>
+      </div>
       <div className="search">
       <input
       className="form-control"

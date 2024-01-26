@@ -12,17 +12,6 @@ const MainProvider = ({children}) => {
     const [zufall, setZufall] = useState(false)
     const [searchTerm, setSearchTerm] = useState()
 
-    // useEffect(() => {
-    //     const getCocktailId = async  () =>{ 
-    //         const resp = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${category}`)
-    //         const ids = resp.data.drinks.map(drink => drink.idDrink);
-    //         setId(ids)
-    //     }
-    //     { category ? getCocktailId() : null}
-    // }, [category])
-
-
-
     useEffect(() => {
       let apiURL
       if (category == "alkoholfrei"){
