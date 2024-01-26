@@ -1,6 +1,5 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 
 export const mainContext = createContext()
 
@@ -12,7 +11,6 @@ const MainProvider = ({children}) => {
     const [cocktailVisible, setCocktailVisible] = useState(false);
     const [zufall, setZufall] = useState(false)
     const [searchTerm, setSearchTerm] = useState()
-    const { cat } = useParams()
 
     // useEffect(() => {
     //     const getCocktailId = async  () =>{ 
@@ -24,9 +22,6 @@ const MainProvider = ({children}) => {
     // }, [category])
 
 
-  
-    useEffect(() => {
-    }, [searchTerm])
 
     useEffect(() => {
       let apiURL
@@ -46,7 +41,7 @@ const MainProvider = ({children}) => {
       { zufall ? setId(resp.data.drinks[0].idDrink) : null }
       }
       { category ? getCocktail() : null}
-  }, [category])
+  }, [category, searchTerm])
 
 
 

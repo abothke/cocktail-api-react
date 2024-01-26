@@ -4,7 +4,7 @@ import axios from 'axios'
 import './cocktailCard.css'
 
 const CocktailCard = () => {
-  const {id, setId, setCocktail, cocktail } = useContext(mainContext);
+  const {searchCount, id, setId, setCocktail, cocktail, searchTerm } = useContext(mainContext);
   const [ingredients, setIngredients] = useState()
   const [measurements, setMeasurements] = useState()
 
@@ -34,7 +34,7 @@ const CocktailCard = () => {
     if (id) {
       getCocktail();
     }
-  }, [id]);
+  }, [id, searchTerm]);
 
 
 

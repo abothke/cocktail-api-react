@@ -3,9 +3,8 @@ import { mainContext } from '../../context/mainProvider'
 import { Link } from 'react-router-dom'
 
 
-
 const Header = () => {
-const { setSearchTerm, searchTerm } = useContext(mainContext)
+const { setSearchTerm } = useContext(mainContext)
 const searchRef = useRef()
   return (
     <>
