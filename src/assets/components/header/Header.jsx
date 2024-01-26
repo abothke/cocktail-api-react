@@ -9,7 +9,7 @@ const searchRef = useRef()
   return (
     <>
     <nav>
-      <h1>Drinks & Chill</h1>
+      <Link to="/"><h1>Drinks & Chill</h1></Link>
       <h2>Cocktails & Getränke!</h2>
       <p>Herzlich Willkommen in der Welt der Cocktails und Getränke!</p>
       <div className="search"></div>
