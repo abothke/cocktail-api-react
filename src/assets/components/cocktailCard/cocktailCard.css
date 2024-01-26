@@ -1,5 +1,4 @@
 .cocktailInfo{
-    height: 50%;
     width: 50%;
     position: fixed;
     left: 25%;
@@ -7,4 +6,22 @@
     background-color: aliceblue;
     color: black;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.cocktailRecipe{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 1em;
+}
+
+#closeDetails{
+    width: 10%;
+    margin: 1em;
+    position: absolute;
+    left: 85%;
 }

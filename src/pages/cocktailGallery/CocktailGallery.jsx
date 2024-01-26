@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { mainContext } from '../../assets/context/mainProvider'
 import { Link, useParams } from 'react-router-dom'
 import CocktailCard from './../../assets/components/cocktailCard/CocktailCard';
+import "./cocktailGallery.css"
 
 
 const CocktailGallery = () => {
@@ -18,18 +19,20 @@ useEffect(()=> {
     <>
     <CocktailCard/>
     {data ? (
-      <>
-      <p>{category}</p>
+      <div class="cocktails">
       {data.map((cocktail, index) =>{
+        let result = index % 2 === 0 ? 'cGallery gerade' : 'cGallery ungerade'
         return(
-          <div key={index}>
-          <p>{cocktail.strDrink}</p>
-          <img src={cocktail.strDrinkThumb}/>
-          <button onClick={() => setId(cocktail.idDrink)}>set ID</button>
+
+          <button className="galleryButton" key={index} onClick={() => setId(cocktail.idDrink)}>
+          <div className={result}>
+          <div class="cocktailTitle"><h2>{cocktail.strDrink}</h2></div>
+          <div class="cocktailImg"><img src={cocktail.strDrinkThumb}/></div>
           </div>
+          </button>
         )
       })}
-      </>
+      </div>
     )
     :
     (

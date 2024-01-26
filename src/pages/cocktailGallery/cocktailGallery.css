@@ -1,0 +1,40 @@
+.cGallery{
+    display: flex;
+    justify-content: center;
+}
+
+.galleryButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 40%;
+    h2{
+    rotate: -90deg;
+    }
+}
+
+.cocktailTitle{
+        display: flex;
+        align-items: center;
+        width: 50%;
+        z-index: 0;
+}
+
+.cocktailImg img{
+    width: 50%;
+}
+
+.cocktailImg{
+}
+
+.cocktails{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+}
+
+.gerade{
+    flex-direction: row-reverse;
+}
