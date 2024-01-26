@@ -22,16 +22,16 @@ useEffect(()=> {
 </div>
 <div className={`${cocktailVisible ? 'blur' : ''}`}>
       {data ? (
-        <div class="cocktails">
+        <div className="cocktails">
         {data.map((cocktail, index) =>{
           return(
-            <button className="galleryButton" key={index} onClick={() => {
+            <button type="button" className="galleryButton btn card" key={index} onClick={() => {
               setId(cocktail.idDrink)
               setCocktailVisible(true)
               }}>
             <div className={`${index % 2 === 0 ? 'cGallery gerade' : 'cGallery ungerade'}`}>
-            <div class="cocktailTitle"><h2>{cocktail.strDrink}</h2></div>
-            <div class="cocktailImg"><img src={cocktail.strDrinkThumb}/></div>
+            <div className="cocktailTitle"><h2>{cocktail.strDrink}</h2></div>
+            <div className="cocktailImg"><img src={cocktail.strDrinkThumb}/></div>
             </div>
             </button>
           )

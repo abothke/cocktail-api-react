@@ -1,6 +1,7 @@
 .cGallery{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .galleryButton{
@@ -8,9 +9,10 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 40%;
+    width: 45%;
     h2{
     rotate: -90deg;
+    font-size: 1.25em;
     }
 }
 

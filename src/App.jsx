@@ -4,6 +4,9 @@ import Home from './pages/home/Home'
 import CocktailGallery from './pages/cocktailGallery/CocktailGallery';
 import Footer from './assets/components/footer/Footer';
 import Header from './assets/components/header/Header';
+import './bootstrap.min.css';
+
+
 
 function App() {
 
