@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 export const mainContext = createContext()
 
@@ -11,6 +12,8 @@ const MainProvider = ({children}) => {
     const [cocktailVisible, setCocktailVisible] = useState(false);
     const [zufall, setZufall] = useState(false)
     const [searchTerm, setSearchTerm] = useState()
+    const { cat } = useParams()
+
     // useEffect(() => {
     //     const getCocktailId = async  () =>{ 
     //         const resp = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${category}`)
@@ -23,9 +26,8 @@ const MainProvider = ({children}) => {
 
   
     useEffect(() => {
-      console.log(searchTerm);
-      console.log(category);
     }, [searchTerm])
+
     useEffect(() => {
       let apiURL
       if (category == "alkoholfrei"){
@@ -34,7 +36,7 @@ const MainProvider = ({children}) => {
         apiURL = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
         setZufall(true)
       } else if (category == "suche"){
-        apiURL = `www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`
+        apiURL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`
       } else {
         apiURL = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${category}`
       }

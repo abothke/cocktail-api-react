@@ -69,7 +69,7 @@ const CocktailCard = () => {
         )}
         </div>
         </div>
-        <p class="instructions">{cocktail.strInstructionsDE}</p>
+        <p className="instructions">{cocktail.strInstructionsDE}</p>
         <button id="closeDetails" onClick={() =>{
           setCocktail(null)
           setId(null)
