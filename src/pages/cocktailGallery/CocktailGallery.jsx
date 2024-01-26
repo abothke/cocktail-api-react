@@ -6,7 +6,7 @@ import "./cocktailGallery.css"
 
 
 const CocktailGallery = () => {
-const { data, setCategory, category, setId, cocktailVisible, setCocktailVisible } = useContext(mainContext)
+const { data, setCategory, setId, cocktailVisible, setCocktailVisible } = useContext(mainContext)
 const { cat } = useParams()
 
 useEffect(()=> {
@@ -24,14 +24,12 @@ useEffect(()=> {
       {data ? (
         <div class="cocktails">
         {data.map((cocktail, index) =>{
-          let result = index % 2 === 0 ? 'cGallery gerade' : 'cGallery ungerade'
           return(
-  
             <button className="galleryButton" key={index} onClick={() => {
               setId(cocktail.idDrink)
               setCocktailVisible(true)
               }}>
-            <div className={result}>
+            <div className={`${index % 2 === 0 ? 'cGallery gerade' : 'cGallery ungerade'}`}>
             <div class="cocktailTitle"><h2>{cocktail.strDrink}</h2></div>
             <div class="cocktailImg"><img src={cocktail.strDrinkThumb}/></div>
             </div>
