@@ -8,6 +8,7 @@ const MainProvider = ({children}) => {
     const [data, setData] = useState()
     const [category, setCategory] = useState()
     const [cocktail, setCocktail] = useState()
+    const [cocktailVisible, setCocktailVisible] = useState(false);
 
     // useEffect(() => {
     //     const getCocktailId = async  () =>{ 
@@ -31,7 +32,7 @@ const MainProvider = ({children}) => {
 
   return (
     <>
-    <mainContext.Provider value={{ data, setCategory, category, setId, id, setCocktail, cocktail}}>
+    <mainContext.Provider value={{ cocktailVisible, setCocktailVisible, data, setCategory, category, setId, id, setCocktail, cocktail}}>
       {children}
     </mainContext.Provider>
     </>

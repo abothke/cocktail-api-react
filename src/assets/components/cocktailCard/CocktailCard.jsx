@@ -8,6 +8,8 @@ const CocktailCard = () => {
   const [ingredients, setIngredients] = useState()
   const [measurements, setMeasurements] = useState()
 
+  const { setCocktailVisible} = useContext(mainContext)
+
   useEffect(() => {
     const getCocktail = async  () =>{ 
         const resp = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`);
@@ -71,6 +73,7 @@ const CocktailCard = () => {
         <button id="closeDetails" onClick={() =>{
           setCocktail(null)
           setId(null)
+          setCocktailVisible(false)
         } }>X</button>
       </div>
       )
