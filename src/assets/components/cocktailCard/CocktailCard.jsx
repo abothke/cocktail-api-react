@@ -38,44 +38,48 @@ const CocktailCard = () => {
 
   return ( 
     <>
-    { cocktail ? (
-      <div id="cocktailInfo" className='cocktailInfo'>
-      <p>{cocktail.strDrink}</p>
-      <p>Zutaten</p>
-      <p>{cocktail.strIngredient1} {cocktail.strMeasure1}</p>
-      <div id="cocktailRecipe" className='cocktailRecipe'>
-      <div>
-      {measurements.map((el, index) => {
-              return (
-                <p>
-                {el[1]}
-                </p>
-                )
+    <div className='overlay'>
+      
+      { cocktail ? (
+        <div id="cocktailInfo" className='cocktailInfo'>
+        <img src={cocktail.strDrinkThumb} width={250}/>
+        <h2>{cocktail.strDrink}</h2>
+        <h3>Zutaten</h3>
+        <div id="cocktailRecipe" className='cocktailRecipe'>
+        <div>
+        {measurements.map((el, index) => {
+                return (
+                  <p>
+                  {el[1]}
+                  </p>
+                  )
+        }
+        )}
+        </div>
+        <div>
+        {ingredients.map((el, index) => {
+                return (
+                  <p>
+                  {el[1]}
+                  </p>
+                  )
+        }
+        )}
+        </div>
+        </div>
+        <p class="instructions">{cocktail.strInstructionsDE}</p>
+        <button id="closeDetails" onClick={() =>{
+          setCocktail(null)
+          setId(null)
+        } }>X</button>
+      </div>
+      )
+      :
+      (
+        null
+      )
       }
-      )}
-      </div>
-      <div>
-      {ingredients.map((el, index) => {
-              return (
-                <p>
-                {el[1]}
-                </p>
-                )
-      }
-      )}
-      </div>
-      </div>
-      <button id="closeDetails" onClick={() =>{
-        setCocktail(null)
-        setId(null)
-      } }>X</button>
     </div>
-    )
-    :
-    (
-      null
-    )
-    }
   </>
   )
 }

@@ -38,3 +38,7 @@
 .gerade{
     flex-direction: row-reverse;
 }
+
+.overlay{
+    position: relative;
+}

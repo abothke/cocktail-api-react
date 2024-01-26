@@ -17,28 +17,33 @@ useEffect(()=> {
 
   return (
     <>
-    <CocktailCard/>
-    {data ? (
-      <div class="cocktails">
-      {data.map((cocktail, index) =>{
-        let result = index % 2 === 0 ? 'cGallery gerade' : 'cGallery ungerade'
-        return(
+    <div>
+<CocktailCard/>
+</div>
+<div className='overlay'>
+      {data ? (
+        <div class="cocktails">
+        {data.map((cocktail, index) =>{
+          let result = index % 2 === 0 ? 'cGallery gerade' : 'cGallery ungerade'
+          return(
+  
+            <button className="galleryButton" key={index} onClick={() => setId(cocktail.idDrink)}>
+            <div className={result}>
+            <div class="cocktailTitle"><h2>{cocktail.strDrink}</h2></div>
+            <div class="cocktailImg"><img src={cocktail.strDrinkThumb}/></div>
+            </div>
+            </button>
+          )
+        })}
+        </div>
+      )
+      :
+      (
+        <p>Hallo</p>
+      )
+      }
+</div>
 
-          <button className="galleryButton" key={index} onClick={() => setId(cocktail.idDrink)}>
-          <div className={result}>
-          <div class="cocktailTitle"><h2>{cocktail.strDrink}</h2></div>
-          <div class="cocktailImg"><img src={cocktail.strDrinkThumb}/></div>
-          </div>
-          </button>
-        )
-      })}
-      </div>
-    )
-    :
-    (
-      <p>Hallo</p>
-    )
-    }
     </>
   )
 }
