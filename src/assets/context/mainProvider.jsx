@@ -9,7 +9,8 @@ const MainProvider = ({children}) => {
     const [category, setCategory] = useState()
     const [cocktail, setCocktail] = useState()
     const [cocktailVisible, setCocktailVisible] = useState(false);
-
+    const [zufall, setZufall] = useState(false)
+    const [searchTerm, setSearchTerm] = useState()
     // useEffect(() => {
     //     const getCocktailId = async  () =>{ 
     //         const resp = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${category}`)
@@ -20,10 +21,27 @@ const MainProvider = ({children}) => {
     // }, [category])
 
 
+  
     useEffect(() => {
+      console.log(searchTerm);
+      console.log(category);
+    }, [searchTerm])
+    useEffect(() => {
+      let apiURL
+      if (category == "alkoholfrei"){
+        apiURL = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic'
+      } else if (category == "zufall"){
+        apiURL = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
+        setZufall(true)
+      } else if (category == "suche"){
+        apiURL = `www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`
+      } else {
+        apiURL = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${category}`
+      }
       const getCocktail = async  () =>{ 
-          const resp = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${category}`)
+          const resp = await axios.get(apiURL)
           setData(resp.data.drinks)
+      { zufall ? setId(resp.data.drinks[0].idDrink) : null }
       }
       { category ? getCocktail() : null}
   }, [category])
@@ -32,7 +50,7 @@ const MainProvider = ({children}) => {
 
   return (
     <>
-    <mainContext.Provider value={{ cocktailVisible, setCocktailVisible, data, setCategory, category, setId, id, setCocktail, cocktail}}>
+    <mainContext.Provider value={{ setSearchTerm, searchTerm, cocktailVisible, setCocktailVisible, data, setCategory, category, setId, id, setCocktail, cocktail}}>
       {children}
     </mainContext.Provider>
     </>

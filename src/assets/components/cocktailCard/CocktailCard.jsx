@@ -8,7 +8,7 @@ const CocktailCard = () => {
   const [ingredients, setIngredients] = useState()
   const [measurements, setMeasurements] = useState()
 
-  const { setCocktailVisible} = useContext(mainContext)
+  const { setCocktailVisible } = useContext(mainContext)
 
   useEffect(() => {
     const getCocktail = async  () =>{ 

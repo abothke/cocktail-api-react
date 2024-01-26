@@ -40,7 +40,7 @@ useEffect(()=> {
       )
       :
       (
-        <p>Hallo</p>
+        <p>Loading...</p>
       )
       }
 </div>
