@@ -44,7 +44,7 @@ const CocktailCard = () => {
       
       { cocktail  ? (
         <div id="cocktailInfo" className='cocktailInfo'>
-        <img src={cocktail.strDrinkThumb} width={250}/>
+        <img src={cocktail.strDrinkThumb} width={150}/>
         <h2>{cocktail.strDrink}</h2>
         <h3>Zutaten</h3>
         <div id="cocktailRecipe" className='cocktailRecipe'>

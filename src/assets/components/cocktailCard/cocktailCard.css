@@ -2,8 +2,8 @@
     width: 50%;
     position: fixed;
     left: 25%;
-    top: 5%;
-    max-height: 90%;
+    top: 1%;
+    max-height: 95%;
     background-color: aliceblue;
     color: black;
     border-radius: 10px;
@@ -12,13 +12,23 @@
     align-items: center;
     z-index: 2;
     padding: 1em 0;
-
 }
 
+.overlay{
+        h2{
+        font-size: 1em;
+        }
+        h3{
+        font-size: 0.75em;
+        }
+}
 .cocktailRecipe{
     display: flex;
     justify-content: space-between;
     width: 50%;
+    p{
+        font-size: 0.75em;
+    }
 }
 
 #closeDetails{
@@ -30,7 +40,8 @@
 }
 
 .instructions{
-    max-width: 80%;
+    max-width: 90%;
+    font-size: 0.75em;
 }
 
 @media (max-width: 768px) {
