@@ -48,3 +48,24 @@
     transition: filter 0.3s ease;
     pointer-events: none;
   }
+
+  @media (max-width: 768px) {
+    .cGallery{
+        flex-direction: column;
+    }
+    .galleryButton{
+        width: 100%;
+        h2{
+            rotate: 0deg;
+        }
+    }
+    .cocktailTitle{
+        width: 100%;
+    }
+    .cocktails{
+        width: 100%;
+    }
+    .gerade{
+        flex-direction: column;
+    }
+  }

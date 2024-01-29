@@ -32,3 +32,22 @@
 .instructions{
     max-width: 80%;
 }
+
+@media (max-width: 768px) {
+    .cocktailInfo{
+        width: 100%;
+        left: 0%;
+        top: 0%;
+        border-radius: 0px;
+    }
+    .cocktailRecipe{
+        width: 100%;
+        padding: 0 2em;
+    }
+    #closeDetails{
+        left: 80%;
+    }
+    .instructions{
+        max-width: 100%;
+    }
+  }
