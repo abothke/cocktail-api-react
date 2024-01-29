@@ -5,7 +5,8 @@ const Footer = () => {
     <>
     <footer>
     <h3>Genuss hat viele Facetten...</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id voluptatibus maiores dolores voluptatem pariatur repellat necessitatibus animi obcaecati molestias eligendi.</p>
+    <p>..aber ohne das richtige Maß geht es nicht! 
+Cocktails kann man mit allen Sinnen genießen. Zum Cocktail-Genuss gehören neben dem Geschmack natürlich auch die Optik, die Farbe und die verschiedenen Aromen, die im Zusammenspiel ganz neue Assoziationen wecken und unterbewusst auch den Geschmack beeinflussen. </p>
     </footer>
     </>
   )
