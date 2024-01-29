@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { mainContext } from '../../assets/context/mainProvider';
 import CocktailCard from './../../assets/components/cocktailCard/CocktailCard';

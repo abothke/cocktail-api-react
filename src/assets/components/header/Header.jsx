@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react'
+import { useContext, useRef, useState } from 'react'
 import { mainContext } from '../../context/mainProvider'
 import { Link } from 'react-router-dom'
 import "./header.css"

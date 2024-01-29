@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react";
 
 export const mainContext = createContext()
 
-const MainProvider = ({children}) => {
+const MainProvider = ({ children }) => {
     const [id, setId] = useState()
     const [data, setData] = useState()
     const [category, setCategory] = useState()

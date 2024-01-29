@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { mainContext } from '../../context/mainProvider'
 import axios from 'axios'
 import './cocktailCard.css'
 
 const CocktailCard = () => {
-  const {searchCount, id, setId, setCocktail, cocktail, searchTerm } = useContext(mainContext);
+  const { id, setId, setCocktail, cocktail, searchTerm } = useContext(mainContext);
   const [ingredients, setIngredients] = useState()
   const [measurements, setMeasurements] = useState()
 
@@ -51,7 +51,7 @@ const CocktailCard = () => {
         <div>
         {measurements.map((el, index) => {
                 return (
-                  <p>
+                  <p key={index}>
                   {el[1]}
                   </p>
                   )
@@ -61,7 +61,7 @@ const CocktailCard = () => {
         <div>
         {ingredients.map((el, index) => {
                 return (
-                  <p>
+                  <p key={index}>
                   {el[1]}
                   </p>
                   )
